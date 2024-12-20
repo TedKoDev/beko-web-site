@@ -59,10 +59,42 @@ export default function Home() {
 
         <KoreanConsonants />
       </Box>
+      {/* Second Section - Features */}
+      <Box sx={{ py: 15, backgroundColor: "white", borderTop: "1px solid #e0e0e0" }}>
+        <Container maxWidth="lg">
+          <Typography variant="h3" textAlign="center" gutterBottom>
+            주요 기능
+          </Typography>
+
+          {/* 첫 번째 줄 */}
+          <Box display="flex" alignItems="center" sx={{ mb: 4 }}>
+            <Box component="img" src="/assets/icon1.png" alt="Feature 1" sx={{ width: "50%", height: "auto", mr: 3 }} />
+            <Box sx={{ width: "50%", textAlign: "left" }}>
+              <Typography variant="h5" gutterBottom sx={{ color: "green" }}>
+                재밌고 효과적인 무료 언어 학습
+              </Typography>
+              <Typography>
+                듀오링고와 함께하는 학습은 재미있을 뿐 아니라, 그 효과도 입증되었어요! 짧막한 레슨으로 포인트를 획득하고 새로운 레벨을 잠금 해제하며 실생활 회화 능력을 키워보세요.
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* 두 번째 줄 */}
+          <Box display="flex" alignItems="center">
+            <Box sx={{ width: "50%", textAlign: "left" }}>
+              <Typography variant="h5" gutterBottom sx={{ color: "green" }}>
+                과학에 기반한 학습
+              </Typography>
+              <Typography>듀오링고는 연구를 통해 인증된 교수법과 재미있는 콘텐츠를 결합하여 읽기, 쓰기, 듣기, 말하기 능력을 효과적으로 가르치는 과정을 만들었습니다!</Typography>
+            </Box>
+            <Box component="img" src="/assets/icon.png" alt="Feature 2" sx={{ width: "50%", height: "auto", ml: 3 }} />
+          </Box>
+        </Container>
+      </Box>
 
       {/* Second Section - Features */}
-      <Box sx={{ py: 15, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: 15, backgroundColor: "white", borderTop: "1px solid #e0e0e0" }}>
+        <Container maxWidth="lg" sx={{ backgroundColor: "red" }}>
           <Typography variant="h3" textAlign="center" gutterBottom>
             주요 기능
           </Typography>

@@ -28,7 +28,7 @@ export default function Navbar() {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: isScrolled ? "white" : "transparent",
+        backgroundColor: isScrolled ? "white" : "white",
         boxShadow: isScrolled ? 1 : "none",
         transition: "background-color 0.3s ease-in-out",
       }}
