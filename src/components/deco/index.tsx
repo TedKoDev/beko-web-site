@@ -17,15 +17,17 @@ export default function KoreanConsonants() {
 
   return (
     <Box
-      sx={{
-        position: "absolute",
-        top: "50%",
-        right: "25%",
-        transform: "translateY(-50%)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      sx={
+        {
+          // position: "absolute",
+          // top: "50%",
+          // right: "30%",
+          // transform: "translateY(-50%)",
+          // display: "flex",
+          // alignItems: "center",
+          // justifyContent: "center",
+        }
+      }
     >
       <Box
         sx={{
