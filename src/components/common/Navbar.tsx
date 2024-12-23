@@ -52,22 +52,29 @@ export default function Navbar() {
         backgroundColor: isScrolled ? "white" : "white",
         boxShadow: isScrolled ? 1 : "none",
         transition: "background-color 0.3s ease-in-out",
+        width: "100%",
+        overflowX: "hidden",
       }}
     >
-      <Toolbar>
+      <Toolbar
+        sx={{
+          px: { xs: 1, sm: 2 },
+          minHeight: { xs: "56px" },
+        }}
+      >
         {/* Logo and Title */}
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            marginLeft: { xs: 2, sm: 4, md: "20vh" },
-            gap: 2,
+            marginLeft: { xs: 1, sm: 4, md: "20vh" },
+            gap: { xs: 1, sm: 2 },
           }}
         >
           <Box
             sx={{
-              width: { xs: "40px", sm: "50px" },
-              height: { xs: "40px", sm: "50px" },
+              width: { xs: "35px", sm: "50px" },
+              height: { xs: "35px", sm: "50px" },
             }}
           >
             <img src={logo} alt="logo" style={{ width: "100%", height: "100%" }} />
@@ -79,7 +86,7 @@ export default function Navbar() {
             sx={{
               textDecoration: "none",
               color: "black",
-              fontSize: { xs: "1.1rem", sm: "1.25rem" },
+              fontSize: { xs: "1rem", sm: "1.25rem" },
             }}
           >
             BeraKorean
@@ -90,7 +97,7 @@ export default function Navbar() {
         <Box sx={{ flexGrow: 1 }} />
 
         {/* Language Selector */}
-        <Box sx={{ mr: 2 }}>
+        <Box sx={{ mr: { xs: 1, sm: 2 } }}>
           <Button
             id="language-button"
             aria-controls={open ? "language-menu" : undefined}
@@ -101,11 +108,16 @@ export default function Navbar() {
               color: "black",
               textTransform: "none",
               fontSize: "1rem",
+              minWidth: { xs: "40px", sm: "auto" }, // 모바일에서 최소 너비 조정
             }}
             startIcon={<LanguageIcon />}
-            endIcon={<KeyboardArrowDownIcon />}
+            endIcon={
+              <Box component="span" sx={{ display: { xs: "none", sm: "inline-flex" } }}>
+                <KeyboardArrowDownIcon />
+              </Box>
+            }
           >
-            Language
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>Language</Box>
           </Button>
           <Menu
             id="language-menu"
@@ -115,6 +127,7 @@ export default function Navbar() {
             MenuListProps={{
               "aria-labelledby": "language-button",
             }}
+            disableScrollLock={true}
           >
             <MenuItem
               onClick={() => {
@@ -146,10 +159,10 @@ export default function Navbar() {
         {/* Start Button */}
         <Box
           sx={{
-            marginRight: { xs: 2, sm: 4, md: "20vh" },
+            marginRight: { xs: 1, sm: 4, md: "40vh" },
           }}
         >
-          <AnimatedButton text="시작하기" onClick={onClickStart} color={colors.primary} shadowColor={colors.tertiary} width={{ xs: "100px", sm: "120px" }} height={{ xs: "35px", sm: "40px" }} />
+          <AnimatedButton text="시작하기" onClick={onClickStart} color={colors.primary} shadowColor={colors.tertiary} width={{ xs: "100px", sm: "120px" }} height={{ xs: "32px", sm: "40px" }} />
         </Box>
       </Toolbar>
     </AppBar>

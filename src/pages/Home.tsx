@@ -648,7 +648,8 @@ export default function Home() {
               >
                 <AnimatedButtonWithIcon
                   text={links[language].cafetalk}
-                  onClick={() => window.open("https://cafetalk.com/tutor/profile/?c=eJzLrwp09s7R9tNPCSqrTM7KdkwuSE1Kt7UFAGnjCHY.&lang=en", "_blank")}
+                  // onClick={() => window.open("https://cafetalk.com/tutor/profile/?c=eJzLrwp09s7R9tNPCSqrTM7KdkwuSE1Kt7UFAGnjCHY.&lang=en", "_blank")}
+                  onClick={() => clickHandler()}
                   color={colors.primary}
                   shadowColor={colors.tertiary}
                   width={{ xs: "100%", sm: "300px" }}
