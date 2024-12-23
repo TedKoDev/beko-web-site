@@ -12,7 +12,7 @@
 
 package.js 에 우선. typscript 체크 하는거 지움
 // "build": "tsc -b && vite build",
-깃헙액션
+깃헙액션2
 
 ## 1. 프로젝트 생성
 
