@@ -264,7 +264,7 @@ export default function Home() {
   return (
     <Box>
       {/* 눈 내리는 효과 */}
-      <Snowfall
+      {/* <Snowfall
         color="rgba(0,0, 0,0.5)" // 눈 색상
         // color="rgba(0,81, 255,0.5)" // 눈 색상
         // color="rgba( 255,0,0,0.5)" // 눈 색상
@@ -278,7 +278,7 @@ export default function Home() {
           zIndex: 3,
           pointerEvents: "none",
         }}
-      />
+      /> */}
 
       <Box>
         {/* Hero Section with Background Image */}
