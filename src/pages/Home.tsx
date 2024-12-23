@@ -29,8 +29,18 @@ import {
 } from "../assets";
 import { useState } from "react";
 import { useLanguageStore } from "../store/languageStore";
+import ComingSoonDialog from "../components/common/ComingSoonDialog";
 
 export default function Home() {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const clickHandler = () => {
+    if (dialogOpen) {
+      setDialogOpen(false); // 다이얼로그 닫기
+    } else {
+      setDialogOpen(true); // 다이얼로그 열기
+    }
+  };
   const { language } = useLanguageStore();
 
   const links = {
@@ -246,6 +256,10 @@ export default function Home() {
     },
   };
 
+  // const clickHandler = () => {
+  //   console.log("click");
+  // };
+
   return (
     <Box>
       {/* Hero Section with Background Image */}
@@ -298,7 +312,16 @@ export default function Home() {
                 {content[language].hero.subtitle}
               </Typography>
               <Box sx={{ mt: 10, display: "flex", justifyContent: "center", marginTop: { xs: "0px", sm: "50px" } }}>
-                <AnimatedButton text={content[language].hero.cta} onClick={() => {}} color={colors.primary} shadowColor={colors.tertiary} width="350px" height="50px" />
+                <AnimatedButton
+                  text={content[language].hero.cta}
+                  onClick={() => {
+                    clickHandler();
+                  }}
+                  color={colors.primary}
+                  shadowColor={colors.tertiary}
+                  width="350px"
+                  height="50px"
+                />
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginLeft: { xs: "0px", sm: "200px" }, marginTop: { xs: "20px", sm: "0px" } }}>
@@ -491,24 +514,44 @@ export default function Home() {
                   alignItems: { xs: "stretch", sm: "center" },
                 }}
               >
-                <AnimatedButtonWithIcon
-                  text={content[language].howToUse.appDownload.appStore}
-                  onClick={() => {}}
-                  color="black"
-                  shadowColor="rgba(0, 0, 0, 0.3)"
-                  width={{ xs: "100%", sm: "300px" }}
-                  height="60px"
-                  startIcon={<Box component="img" src={apple} sx={{ width: 24 }} />}
-                />
-                <AnimatedButtonWithIcon
-                  text={content[language].howToUse.appDownload.playStore}
-                  onClick={() => {}}
-                  color="#1a73e8"
-                  shadowColor="rgba(26, 115, 232, 0.3)"
-                  width={{ xs: "100%", sm: "300px" }}
-                  height="60px"
-                  startIcon={<Box component="img" src={google} sx={{ width: 24 }} />}
-                />
+                <Box
+                  sx={{
+                    position: "relative",
+                    zIndex: 1,
+                    width: { xs: "100%", sm: "300px" },
+                  }}
+                >
+                  <AnimatedButtonWithIcon
+                    text={content[language].howToUse.appDownload.appStore}
+                    onClick={() => {
+                      clickHandler();
+                    }}
+                    color="black"
+                    shadowColor="rgba(0, 0, 0, 0.3)"
+                    width={{ xs: "100%", sm: "250px" }}
+                    height="60px"
+                    startIcon={<Box component="img" src={apple} sx={{ width: 24 }} />}
+                  />
+                </Box>
+                <Box
+                  sx={{
+                    position: "relative",
+                    zIndex: 1,
+                    width: { xs: "100%", sm: "300px" },
+                  }}
+                >
+                  <AnimatedButtonWithIcon
+                    text={content[language].howToUse.appDownload.playStore}
+                    onClick={() => {
+                      clickHandler();
+                    }}
+                    color="#1a73e8"
+                    shadowColor="rgba(26, 115, 232, 0.3)"
+                    width={{ xs: "100%", sm: "250px" }}
+                    height="60px"
+                    startIcon={<Box component="img" src={google} sx={{ width: 24 }} />}
+                  />
+                </Box>
               </Box>
             </Box>
             <Box display={{ xs: "none", md: "flex" }} width="50%">
@@ -562,15 +605,23 @@ export default function Home() {
                 {content[language].youtube.title}
               </Typography>
               <Typography sx={{ mb: 3 }}>{content[language].youtube.description}</Typography>
-              <AnimatedButtonWithIcon
-                text={links[language].youtube}
-                onClick={() => window.open("https://www.youtube.com/@berakorean", "_blank")}
-                color="#FF0000"
-                shadowColor="rgba(255, 0, 0, 0.3)"
-                width={{ xs: "100%", sm: "300px" }}
-                height="60px"
-                startIcon={<Box component="img" src={youtube} sx={{ width: 24 }} />}
-              />
+              <Box
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  width: { xs: "100%", sm: "300px" },
+                }}
+              >
+                <AnimatedButtonWithIcon
+                  text={links[language].youtube}
+                  onClick={() => window.open("https://www.youtube.com/@berakorean", "_blank")}
+                  color="#FF0000"
+                  shadowColor="rgba(255, 0, 0, 0.3)"
+                  width={{ xs: "100%", sm: "300px" }}
+                  height="60px"
+                  startIcon={<Box component="img" src={youtube} sx={{ width: 24 }} />}
+                />
+              </Box>
             </Box>
           </Box>
 
@@ -587,15 +638,24 @@ export default function Home() {
                 {content[language].cafetalk.title}
               </Typography>
               <Typography sx={{ mb: 3 }}>{content[language].cafetalk.description}</Typography>
-              <AnimatedButtonWithIcon
-                text={links[language].cafetalk}
-                onClick={() => window.open("https://cafetalk.com/tutor/profile/?c=eJzLrwp09s7R9tNPCSqrTM7KdkwuSE1Kt7UFAGnjCHY.&lang=en", "_blank")}
-                color={colors.primary}
-                shadowColor={colors.tertiary}
-                width={{ xs: "100%", sm: "300px" }}
-                height="60px"
-                startIcon={<Box component="img" src={cafetalk} sx={{ width: 50 }} />}
-              />
+
+              <Box
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  width: { xs: "100%", sm: "300px" },
+                }}
+              >
+                <AnimatedButtonWithIcon
+                  text={links[language].cafetalk}
+                  onClick={() => window.open("https://cafetalk.com/tutor/profile/?c=eJzLrwp09s7R9tNPCSqrTM7KdkwuSE1Kt7UFAGnjCHY.&lang=en", "_blank")}
+                  color={colors.primary}
+                  shadowColor={colors.tertiary}
+                  width={{ xs: "100%", sm: "300px" }}
+                  height="60px"
+                  startIcon={<Box component="img" src={cafetalk} sx={{ width: 50 }} />}
+                />
+              </Box>
             </Box>
             <Box
               component="img"
@@ -627,25 +687,33 @@ export default function Home() {
             <Typography variant="h6" sx={{ mb: 4 }}>
               {content[language].howToUse.startNow.subtitle}
             </Typography>
-            <Button
-              variant="contained"
-              size="large"
-              component={Link}
-              to="/signup"
+
+            {/* Second Button - CTA */}
+            <Box
               sx={{
-                backgroundColor: "white",
-                color: "primary.main",
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.9)",
-                },
+                position: "relative",
+                zIndex: 1,
+                display: "flex",
+                justifyContent: "center",
+                mt: { xs: 2, sm: 4 }, // Adjusted margin top
               }}
             >
-              {content[language].howToUse.startNow.cta}
-            </Button>
+              <AnimatedButton
+                text={content[language].hero.cta}
+                onClick={() => {
+                  clickHandler();
+                }}
+                color="white"
+                textColor="primary.main"
+                shadowColor="rgba(255, 255, 255, 0.3)"
+                width="350px"
+                height="50px"
+              />
+            </Box>
           </Box>
         </Container>
       </Box>
-
+      <ComingSoonDialog open={dialogOpen} onClose={clickHandler} />
       <Box sx={{ position: "absolute", top: 20, right: 20, display: "flex", gap: 1 }}>
         <Button onClick={() => setLanguage("ko")}>한국어</Button>
         <Button onClick={() => setLanguage("en")}>English</Button>

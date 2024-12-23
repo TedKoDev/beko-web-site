@@ -5,6 +5,7 @@ interface AnimatedButtonProps {
   text: string;
   onClick: () => void;
   color?: string;
+  textColor?: string;
   shadowColor?: string;
   width?: string;
   height?: string;
@@ -13,6 +14,7 @@ interface AnimatedButtonProps {
 const AnimatedButton = ({
   text,
   onClick,
+  textColor = "white",
   color = colors.primary, // 버튼 배경색
   shadowColor = colors.tertiary, // 그림자 색상
   width = "200px",
@@ -53,7 +55,7 @@ const AnimatedButton = ({
           width: "100%",
           height: "100%",
           backgroundColor: color,
-          color: "white",
+          color: textColor,
           fontWeight: "bold",
           textTransform: "uppercase",
           borderRadius: "12px",
