@@ -53,7 +53,7 @@ export default function Navbar() {
         boxShadow: isScrolled ? 1 : "none",
         transition: "background-color 0.3s ease-in-out",
         width: "100%",
-        overflowX: "hidden",
+        // overflowX: "hidden",
       }}
     >
       <Toolbar
@@ -162,7 +162,7 @@ export default function Navbar() {
             marginRight: { xs: 1, sm: 4, md: "40vh" },
           }}
         >
-          <AnimatedButton text="시작하기" onClick={onClickStart} color={colors.primary} shadowColor={colors.tertiary} width={{ xs: "100px", sm: "120px" }} height={{ xs: "32px", sm: "40px" }} />
+          <AnimatedButton text="시작하기" onClick={onClickStart} color={colors.primary} shadowColor={colors.tertiary} width="100px" height="40px" />
         </Box>
       </Toolbar>
     </AppBar>

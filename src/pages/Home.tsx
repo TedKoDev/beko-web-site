@@ -266,7 +266,7 @@ export default function Home() {
       <Box
         sx={{
           height: "100vh",
-          backgroundImage: 'url("/path/to/your/image.jpg")',
+          // backgroundImage: 'url("")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
