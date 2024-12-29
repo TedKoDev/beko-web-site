@@ -14,6 +14,7 @@ import Terms from "./pages/terms/Terms";
 import Term from "./pages/terms/components/Term"; // 대문자 'T'
 import Privacy from "./pages/terms/components/Privacy";
 import Marketing from "./pages/terms/components/Marketing";
+import Privacy2 from "./pages/Privacy2";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/privacy" element={<Privacy2 />} />
           <Route path="/terms" element={<Terms />}>
             <Route path="term" element={<Term />} />
             <Route path="privacy" element={<Privacy />} />

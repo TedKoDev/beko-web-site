@@ -20,7 +20,7 @@ export default function Footer() {
           {"."}
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 2 }}>
-          <Link color="inherit" href="https://berakorean.com/terms/privacy" target="_blank" rel="noopener noreferrer">
+          <Link color="inherit" href="https://berakorean.com/privacy" target="_blank" rel="noopener noreferrer">
             개인정보처리방침
           </Link>
           <Link color="inherit" href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536" target="_blank" rel="noopener noreferrer">
