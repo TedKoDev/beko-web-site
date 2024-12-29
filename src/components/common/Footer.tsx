@@ -14,7 +14,7 @@ export default function Footer() {
           }}
         >
           <Link
-            href="https://privacy.berakorean.com"
+            href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
