@@ -14,7 +14,7 @@ export default function Footer() {
           }}
         >
           <Link
-            href="https://berakorean.com/privacy"
+            href="/privacy"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
