@@ -11,9 +11,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Footer from "./components/common/Footer";
 import Terms from "./pages/terms/Terms";
-import Term from "./pages/terms/components/term";
-import Privacy from "./pages/terms/components/privacy";
-import Marketing from "./pages/terms/components/marketing";
+import Term from "./pages/terms/components/Term"; // 대문자 'T'
+import Privacy from "./pages/terms/components/Privacy";
+import Marketing from "./pages/terms/components/Marketing";
 
 const queryClient = new QueryClient();
 
