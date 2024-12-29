@@ -20,22 +20,9 @@ export default function Footer() {
           {"."}
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "", gap: 2, mt: 2 }}>
-          <Link
-            href="https://berakorean.com/privacy"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: "inherit",
-              textDecoration: "",
-              display: "block",
-              mb: 2,
-              "&:hover": {
-                textDecoration: "underline",
-              },
-            }}
-          >
+          <a href="https://berakorean.com/privacy" target="_blank" rel="noopener noreferrer">
             개인정보처리방침
-          </Link>
+          </a>
           <RouterLink to="/terms/marketing" style={{ color: "inherit", textDecoration: "none" }}>
             마케팅 동의
           </RouterLink>
