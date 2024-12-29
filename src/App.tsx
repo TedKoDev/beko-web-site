@@ -10,11 +10,11 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Footer from "./components/common/Footer";
-import Terms from "./pages/terms/Terms";
-import Term from "./pages/terms/components/Term"; // 대문자 'T'
-import Privacy from "./pages/terms/components/Privacy";
-import Marketing from "./pages/terms/components/Marketing";
-import Privacy2 from "./pages/Privacy2";
+// import Terms from "./pages/terms/Terms";
+// import Term from "./pages/terms/components/Term"; // 대문자 'T'
+// import Privacy from "./pages/terms/components/Privacy";
+// import Marketing from "./pages/terms/components/Marketing";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
@@ -25,12 +25,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/privacy" element={<Privacy2 />} />
-          <Route path="/terms" element={<Terms />}>
+          <Route path="/privacy" element={<Privacy />} />
+          {/* <Route path="/terms" element={<Terms />}>
             <Route path="term" element={<Term />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="marketing" element={<Marketing />} />
-          </Route>
+          </Route> */}
           <Route path="/community" element={<Community />} />
           <Route path="/post/:id" element={<PostDetail />} />
           <Route path="/create-post" element={<CreatePost />} />

@@ -14,17 +14,14 @@ export default function Footer() {
           }}
         >
           <Link
-            href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536"
+            href="/privacy"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
-              fontSize: "1rem",
+              fontSize: "1.2rem", // 기존보다 크게
               fontWeight: "bold",
               color: "primary.main",
               textDecoration: "underline",
-              "&:hover": {
-                textDecoration: "underline",
-              },
             }}
           >
             개인정보처리방침
