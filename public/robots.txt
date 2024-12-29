@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://berakorean.com/sitemap.xml 
