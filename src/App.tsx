@@ -39,6 +39,20 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Routes>
         <Footer />
+        <footer style={{ textAlign: "center", marginTop: "1rem" }}>
+          <a
+            href="https://privacy.berakorean.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontSize: "14px",
+              textDecoration: "underline",
+              color: "blue",
+            }}
+          >
+            개인정보처리방침
+          </a>
+        </footer>
       </BrowserRouter>
       <ReactQueryDevtools />
     </QueryClientProvider>
