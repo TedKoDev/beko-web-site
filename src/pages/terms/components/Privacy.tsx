@@ -26,7 +26,7 @@ export default function Privacy() {
           },
         }}
       >
-        View Terms of Use
+        View Privacy Policy
       </Button>
 
       <Typography variant="body2" sx={{ mt: 4, color: "text.secondary" }}>

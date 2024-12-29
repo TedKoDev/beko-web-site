@@ -26,7 +26,7 @@ export default function Marketing() {
           },
         }}
       >
-        View Terms of Use
+        View Marketing Consent
       </Button>
 
       <Typography variant="body2" sx={{ mt: 4, color: "text.secondary" }}>
