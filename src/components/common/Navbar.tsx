@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { AppBar, Toolbar, Typography, Button, Box, Menu, MenuItem } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useAuthStore } from "../../store/authStore";
+import { Link, useNavigate } from "react-router-dom";
+
 import AnimatedButton from "../Button/AnimatedButton";
 import { colors } from "../../styles/colors";
 import logo from "../../assets/icon.png";
@@ -11,17 +11,12 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useLanguageStore } from "../../store/languageStore";
 
 export default function Navbar() {
-  const { isAuthenticated, logout } = useAuthStore();
+  const navigate = useNavigate();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const { language, setLanguage } = useLanguageStore();
-
-  const languageNames = {
-    ko: "한국어",
-    en: "English",
-    jp: "日本語",
-  };
+  const { setLanguage } = useLanguageStore();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -42,7 +37,7 @@ export default function Navbar() {
   }, []);
 
   const onClickStart = () => {
-    console.log("시작하기");
+    navigate("/terms");
   };
 
   return (

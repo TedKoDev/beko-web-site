@@ -10,6 +10,10 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Footer from "./components/common/Footer";
+import Terms from "./pages/terms/Terms";
+import Term from "./pages/terms/components/term";
+import Privacy from "./pages/terms/components/privacy";
+import Marketing from "./pages/terms/components/marketing";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +24,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/terms" element={<Terms />}>
+            <Route index element={<Term />} />
+            <Route path="privacy" element={<Privacy />} />
+            <Route path="marketing" element={<Marketing />} />
+          </Route>
           <Route path="/community" element={<Community />} />
           <Route path="/post/:id" element={<PostDetail />} />
           <Route path="/create-post" element={<CreatePost />} />

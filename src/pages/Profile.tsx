@@ -1,5 +1,5 @@
 import { Container, Typography, Paper, Box, Avatar } from "@mui/material";
-import { useAuthStore } from "../store/authStore";
+import { useAuthStore } from "./authStore";
 
 export default function Profile() {
   const { user } = useAuthStore();

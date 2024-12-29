@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, TextField, Button, Box, Link } from "@mui/material";
 import { login } from "../api/auth";
-import { useAuthStore } from "../store/authStore";
+import { useAuthStore } from "./authStore";
 
 export default function Login() {
   const navigate = useNavigate();
