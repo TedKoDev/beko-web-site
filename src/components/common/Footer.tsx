@@ -21,7 +21,7 @@ export default function Footer() {
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "", gap: 2, mt: 2 }}>
           <Link
-            href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536"
+            href="https://berakorean.com/privacy"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
