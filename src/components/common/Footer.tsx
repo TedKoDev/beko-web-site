@@ -19,19 +19,23 @@ export default function Footer() {
           {new Date().getFullYear()}
           {"."}
         </Typography>
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 2 }}>
-          {/* <Link color="inherit" href="https://berakorean.com/privacy" target="_blank" rel="noopener noreferrer">
+        <Box sx={{ display: "flex", justifyContent: "", gap: 2, mt: 2 }}>
+          <Link
+            href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: "inherit",
+              textDecoration: "",
+              display: "block",
+              mb: 2,
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            }}
+          >
             개인정보처리방침
           </Link>
-          <Link color="inherit" href="http://beko-privacy.s3-website.ap-northeast-2.amazonaws.com" target="_blank" rel="noopener noreferrer">
-            개인정보처리방침
-          </Link> */}
-          {/* <Link color="inherit" href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536" target="_blank" rel="noopener noreferrer">
-            개인정보처리방침
-          </Link> */}
-          <a href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536" target="_blank" rel="noopener noreferrer">
-            개인정보처리방침
-          </a>
           <RouterLink to="/terms/marketing" style={{ color: "inherit", textDecoration: "none" }}>
             마케팅 동의
           </RouterLink>
