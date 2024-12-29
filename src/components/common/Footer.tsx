@@ -26,9 +26,12 @@ export default function Footer() {
           <Link color="inherit" href="http://beko-privacy.s3-website.ap-northeast-2.amazonaws.com" target="_blank" rel="noopener noreferrer">
             개인정보처리방침
           </Link> */}
-          <Link color="inherit" href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536" target="_blank" rel="noopener noreferrer">
+          {/* <Link color="inherit" href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536" target="_blank" rel="noopener noreferrer">
             개인정보처리방침
-          </Link>
+          </Link> */}
+          <a href="https://flame-mascara-204.notion.site/Policy-15da507c1a62806aa0cbe24c8769c536" target="_blank" rel="noopener noreferrer">
+            개인정보처리방침
+          </a>
           <RouterLink to="/terms/marketing" style={{ color: "inherit", textDecoration: "none" }}>
             마케팅 동의
           </RouterLink>
