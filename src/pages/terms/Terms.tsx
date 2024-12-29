@@ -6,7 +6,7 @@ function Terms() {
   const location = useLocation();
 
   const getCurrentTab = () => {
-    if (location.pathname === "/terms") return 0;
+    if (location.pathname === "/terms/term") return 0;
     if (location.pathname === "/terms/privacy") return 1;
     if (location.pathname === "/terms/marketing") return 2;
     return 0;
@@ -15,7 +15,7 @@ function Terms() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     switch (newValue) {
       case 0:
-        navigate("/terms");
+        navigate("/terms/term");
         break;
       case 1:
         navigate("/terms/privacy");
