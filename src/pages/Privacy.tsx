@@ -6,7 +6,7 @@ export default function Privacy() {
 
   useEffect(() => {
     // S3에서 privacy.html 내용을 가져옴
-    fetch("https://beko-privacy.s3.ap-northeast-2.amazonaws.com/privacy.html")
+    fetch("https://beko-privacy.s3.ap-northeast-2.amazonaws.com/%08privacy.html")
       .then((response) => response.text())
       .then((html) => {
         setContent(html);
