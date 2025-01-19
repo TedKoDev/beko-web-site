@@ -38,7 +38,7 @@ export default function Navbar() {
 
   const onClickStart = () => {
     // navigate("/terms");
-    alert("앱 배포가 진행중 입니다. 조금만 기다려주세요.");
+    alert("웹버전 준비중 입니다. web version is under development.");
   };
 
   return (

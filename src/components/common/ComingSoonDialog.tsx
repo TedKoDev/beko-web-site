@@ -11,7 +11,7 @@ const ComingSoonDialog: React.FC<ComingSoonDialogProps> = ({ open, onClose }) =>
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <DialogTitle>Coming Soon</DialogTitle>
       <DialogContent>
-        <Typography variant="body1">This page is currently under development. It will be updated soon. Please wait a little longer!</Typography>
+        <Typography variant="body1">Web version is under development. Please wait a little longer! why don't you try the app version? Please download from the link below.</Typography>
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose} color="primary" variant="contained">
