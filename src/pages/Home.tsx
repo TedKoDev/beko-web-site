@@ -30,7 +30,6 @@ import {
 import { useState } from "react";
 import { useLanguageStore } from "../store/languageStore";
 import ComingSoonDialog from "../components/common/ComingSoonDialog";
-import Snowfall from "react-snowfall"; // react-snowfall 라이브러리
 
 export default function Home() {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -543,7 +542,7 @@ export default function Home() {
                     <AnimatedButtonWithIcon
                       text={content[language].howToUse.appDownload.appStore}
                       onClick={() => {
-                        clickHandler();
+                        window.open("https://apps.apple.com/us/app/berakorean/id6739745872", "_blank");
                       }}
                       color="black"
                       shadowColor="rgba(0, 0, 0, 0.3)"
@@ -562,7 +561,7 @@ export default function Home() {
                     <AnimatedButtonWithIcon
                       text={content[language].howToUse.appDownload.playStore}
                       onClick={() => {
-                        clickHandler();
+                        window.open("https://play.google.com/store/apps/details?id=com.ordihong.beko", "_blank");
                       }}
                       color="#1a73e8"
                       shadowColor="rgba(26, 115, 232, 0.3)"
@@ -667,8 +666,7 @@ export default function Home() {
                 >
                   <AnimatedButtonWithIcon
                     text={links[language].cafetalk}
-                    // onClick={() => window.open("https://cafetalk.com/tutor/profile/?c=eJzLrwp09s7R9tNPCSqrTM7KdkwuSE1Kt7UFAGnjCHY.&lang=en", "_blank")}
-                    onClick={() => clickHandler()}
+                    onClick={() => window.open("https://cafetalk.com/tutor/profile/?c=eJzLrwp09s7R9tNPCSqrTM7KdkwuSE1Kt7UFAGnjCHY.&lang=en", "_blank")}
                     color={colors.primary}
                     shadowColor={colors.tertiary}
                     width={{ xs: "100%", sm: "300px" }}
