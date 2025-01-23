@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Typography, TextField, Button, Box, Link, Select, MenuItem } from "@mui/material";
+import { Container, Typography, TextField, Button, Box, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { login } from "../../api/auth";
 import { useAuthStore } from "../../store/authStore";
+import { useAuth } from "../../hooks/quries/useAuth";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -12,12 +13,14 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { loginMutation } = useAuth();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await login({ email, password });
+      const response = await loginMutation.mutateAsync({ email, password });
+      console.log(response);
       setUser(response.user);
-      navigate("/");
+      navigate("/main");
     } catch (error) {
       console.error(t("loginFailed"), error);
     }

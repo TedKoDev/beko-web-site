@@ -1,7 +1,7 @@
 import { client } from "./client";
 import { ErrorResponse } from "./utils";
 
-interface LoginData {
+export interface LoginData {
   email: string;
   password: string;
 }
@@ -16,17 +16,25 @@ export interface SignupData extends LoginData {
   marketing_agreement: boolean;
 }
 
-interface CheckResponse {
+export interface LoginResponse {
+  access_token: string;
+  user: any;
+}
+
+export interface CheckResponse {
   available: boolean;
   message?: string;
 }
 
-interface SignupResponse {
+export interface SignupResponse {
   message: string;
   username: string;
 }
 
-export const login = (data: LoginData) => client.post("/auth/login", data).then((response) => response.data);
+export const login = async (data: LoginData): Promise<LoginResponse> => {
+  const response = await client.post("/auth/login", data);
+  return response.data as LoginResponse;
+};
 
 export const signup = async (data: SignupData): Promise<SignupResponse> => {
   const response = await client.post("/auth/register", data);

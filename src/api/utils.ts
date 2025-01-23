@@ -1,7 +1,10 @@
 import { client } from "./client";
 import { CountryResponse } from "../types/country";
 
-export const getCountry = () => client.get<CountryResponse>("/country/list").then((response) => response.data);
+export const getCountry = async (): Promise<CountryResponse> => {
+  const response = await client.get<CountryResponse>("/country/list");
+  return response.data;
+};
 
 export interface ApiError {
   status: number;

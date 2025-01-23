@@ -26,6 +26,6 @@
   "passwordNumber": "Must include numbers",
   "passwordSpecialChar": "Must include special characters",
   "passwordConfirmError": "Passwords do not match",
-  "signupSuccess": "Sign up completed. We have sent an authentication email to the email you entered. Please log in after verifying.",
+  "signupSuccess": "Sign up completed. \n We have sent an authentication email to the email you entered. Please log in after verifying. \n *If the email does not arrive, please check the spam mail folder.",
   "signingUp": "Signing up..."
 }

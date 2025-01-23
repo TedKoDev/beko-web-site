@@ -21,7 +21,6 @@ import {
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CircularProgress from "@mui/material/CircularProgress";
 
-import { signup } from "../../api/auth";
 import { useTranslation } from "react-i18next";
 import { useCountry } from "../../hooks/quries/useCountry";
 import { useValidation } from "../../hooks/useValidation";
@@ -67,6 +66,9 @@ export default function Signup() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const { country, isLoading, error } = useCountry();
+
+  console.log(country);
+
   const { usernameError, emailError, passwordError, passwordConfirmError, validateUsername, validateEmail, validatePassword, validatePasswordConfirm } = useValidation();
   const { signupMutation } = useAuth();
 
@@ -186,21 +188,20 @@ export default function Signup() {
             <FormControl fullWidth margin="normal">
               <InputLabel id="country-select-label">{t("country")}</InputLabel>
               <Select labelId="country-select-label" id="country-select" value={selectedCountry} onChange={handleCountryChange} input={<OutlinedInput label={t("country")} />} MenuProps={MenuProps}>
-                {Array.isArray(country?.data) &&
-                  country.data.map((c: Country) => (
-                    <MenuItem
-                      key={c.country_id}
-                      value={c.country_id.toString()}
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 1,
-                      }}
-                    >
-                      <span>{c.flag_icon} </span>
-                      <span>{c.country_name}</span>
-                    </MenuItem>
-                  ))}
+                {country?.data.map((c: Country) => (
+                  <MenuItem
+                    key={c.country_id}
+                    value={c.country_id.toString()}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    <span>{c.flag_icon} </span>
+                    <span>{c.country_name}</span>
+                  </MenuItem>
+                ))}
               </Select>
               <FormControlLabel
                 control={<Checkbox checked={termAgreement} onChange={(e) => setTermAgreement(e.target.checked)} />}

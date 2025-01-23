@@ -29,6 +29,6 @@
   "passwordNumber": "숫자를 포함해야 합니다",
   "passwordSpecialChar": "특수문자를 포함해야 합니다",
   "passwordConfirmError": "비밀번호가 일치하지 않습니다",
-  "signupSuccess": "회원가입이 완료되었습니다. 입력하신 이메일로 인증 메일을 발송했습니다. 인증 후 로그인해주세요.",
+  "signupSuccess": "회원가입이 완료되었습니다. \n 입력하신 이메일로 인증 메일을 발송했습니다. \n 인증 후 로그인해주세요. \n *메일이 오지않았다면 스팸메일함을 확인해주세요.",
   "signingUp": "회원가입 중..."
 }

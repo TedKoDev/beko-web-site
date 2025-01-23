@@ -27,13 +27,20 @@ import {
   google,
   youtube,
 } from "../assets";
-
+import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../store/authStore";
 export default function Home() {
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const navigate = useNavigate();
   const { t } = useTranslation("home");
+  const { isAuthenticated } = useAuthStore();
 
   const clickHandler = () => {
-    setDialogOpen(!dialogOpen);
+    // setDialogOpen(!dialogOpen);
+    if (isAuthenticated) {
+      navigate("/main");
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -484,7 +491,7 @@ export default function Home() {
             </Box>
           </Container>
         </Box>
-        <ComingSoonDialog open={dialogOpen} onClose={clickHandler} />
+        {/* <ComingSoonDialog open={dialogOpen} onClose={clickHandler} /> */}
         {/* <Box sx={{ position: "absolute", top: 20, right: 20, display: "flex", gap: 1 }}>
           <Button onClick={() => setLanguage("ko")}>한국어</Button>
           <Button onClick={() => setLanguage("en")}>English</Button>

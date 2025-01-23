@@ -8,8 +8,9 @@ export const useCountry = () => {
     isLoading,
     error,
   } = useQuery<CountryResponse>({
-    queryKey: ["country"],
+    queryKey: ["countries"],
     queryFn: getCountry,
   });
+
   return { country, isLoading, error };
 };
