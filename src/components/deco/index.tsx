@@ -38,8 +38,8 @@ export default function KoreanConsonants() {
           maxWidth: "500px",
         }}
       >
-        {["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ"].map((consonant, index) => {
-          const dynamicAngle = Math.sin((scrollOffset + index * 50) / 100) * 30; // 스크롤 위치에 따라 각도 계산
+        {["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "ㄲ", "ㄸ"].map((consonant, index) => {
+          const dynamicAngle = Math.sin((scrollOffset + index * 50) / 100) * 130; // 스크롤 위치에 따라 각도 계산
 
           return (
             <Box

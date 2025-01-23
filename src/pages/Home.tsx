@@ -1,12 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
-import { useState } from "react";
+
 import { useTranslation } from "react-i18next";
 
 import KoreanConsonants from "../components/deco";
 import AnimatedButton from "../components/Button/AnimatedButton";
 import { colors } from "../styles/colors";
 import AnimatedButtonWithIcon from "../components/Button/AnimatedButtonWithIcon";
-import ComingSoonDialog from "../components/common/ComingSoonDialog";
 
 import {
   schoolLogo,
