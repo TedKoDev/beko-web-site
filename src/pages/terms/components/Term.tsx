@@ -3,7 +3,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 export default function Term() {
   return (
-    <Paper sx={{ p: 4, maxWidth: "800px", margin: "0 auto" }}>
+    <Paper sx={{ p: 4, maxWidth: "800px", margin: "64px auto" }}>
       <Typography variant="h5" gutterBottom>
         이용약관 / Terms of Use
       </Typography>

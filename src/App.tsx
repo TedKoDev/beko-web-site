@@ -11,15 +11,16 @@ import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import Footer from "./components/common/Footer";
 // import Terms from "./pages/terms/Terms";
-// import Term from "./pages/terms/components/Term"; // 대문자 'T'
+import Term from "./pages/terms/components/Term"; // 대문자 'T'
 // import Privacy from "./pages/terms/components/Privacy";
-// import Marketing from "./pages/terms/components/Marketing";
+import Marketing from "./pages/terms/components/Marketing";
 import Privacy from "./pages/Privacy";
 import { useEffect } from "react";
 import "./i18n";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "./store/authStore";
 import Main from "./pages/main/Main";
+import Terms from "./pages/terms/Terms";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,9 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/terms/term" element={<Term />} />
+          <Route path="/terms/marketing" element={<Marketing />} />
         </Routes>
         <Footer />
       </BrowserRouter>

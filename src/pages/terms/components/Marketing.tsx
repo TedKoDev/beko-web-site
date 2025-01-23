@@ -3,7 +3,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 export default function Marketing() {
   return (
-    <Paper sx={{ p: 4, maxWidth: "800px", margin: "0 auto" }}>
+    <Paper sx={{ p: 4, maxWidth: "800px", margin: "64px auto" }}>
       <Typography variant="h5" gutterBottom>
         마케팅 동의 / Marketing Consent
       </Typography>

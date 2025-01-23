@@ -1,3 +1,4 @@
+import { Paper } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
@@ -17,7 +18,7 @@ export default function Privacy() {
   }, []);
 
   return (
-    <>
+    <Paper sx={{ p: 4, maxWidth: "800px", margin: "64px auto" }}>
       <Helmet>
         <title>개인정보처리방침 - BeraKorean</title>
         <meta name="description" content="BeraKorean의 개인정보처리방침입니다." />
@@ -30,6 +31,6 @@ export default function Privacy() {
           margin: "0 auto",
         }}
       />
-    </>
+    </Paper>
   );
 }
