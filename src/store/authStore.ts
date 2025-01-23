@@ -19,3 +19,13 @@ export const useAuthStore = create<AuthState>((set) => ({
   setUser: (user) => set({ user, isAuthenticated: !!user }),
   logout: () => set({ user: null, isAuthenticated: false }),
 }));
+
+interface CountryState {
+  country: string[];
+  setCountry: (country: string[]) => void;
+}
+
+export const useCountryStore = create<CountryState>((set) => ({
+  country: [],
+  setCountry: (country: string[]) => set({ country }),
+}));

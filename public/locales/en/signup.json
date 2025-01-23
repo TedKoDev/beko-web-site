@@ -1,0 +1,17 @@
+{
+  "title": "Sign Up",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "country": "Country",
+  "signupButton": "Sign Up",
+  "loginLink": "Already have an account? Sign in",
+  "signupFailed": "Sign up failed",
+  "countryPlaceholder": "Select a country",
+  "usernameTaken": "Username is already taken",
+  "emailTaken": "Email is already in use",
+  "passwordRequirements": "Password must be at least 8 characters and include uppercase, lowercase, numbers, and special characters",
+  "usernameTooShort": "Username must be at least 2 characters",
+  "invalidEmail": "Please enter a valid email address",
+  "checkFailed": "Verification failed. Please try again"
+}

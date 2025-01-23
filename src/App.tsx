@@ -7,18 +7,31 @@ import Community from "./pages/Community";
 import PostDetail from "./pages/PostDetail";
 import CreatePost from "./pages/CreatePost";
 import Profile from "./pages/Profile";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
 import Footer from "./components/common/Footer";
 // import Terms from "./pages/terms/Terms";
 // import Term from "./pages/terms/components/Term"; // 대문자 'T'
 // import Privacy from "./pages/terms/components/Privacy";
 // import Marketing from "./pages/terms/components/Marketing";
 import Privacy from "./pages/Privacy";
+import { useEffect } from "react";
+import "./i18n";
+import { useTranslation } from "react-i18next";
 
 const queryClient = new QueryClient();
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // 초기 언어 설정이 필요한 경우에만 실행
+    const savedLanguage = localStorage.getItem("i18nextLng");
+    if (savedLanguage && i18n.language !== savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    }
+  }, [i18n]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -26,11 +39,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy" element={<Privacy />} />
-          {/* <Route path="/terms" element={<Terms />}>
-            <Route path="term" element={<Term />} />
-            <Route path="privacy" element={<Privacy />} />
-            <Route path="marketing" element={<Marketing />} />
-          </Route> */}
           <Route path="/community" element={<Community />} />
           <Route path="/post/:id" element={<PostDetail />} />
           <Route path="/create-post" element={<CreatePost />} />

@@ -1,0 +1,17 @@
+{
+  "title": "新規登録",
+  "username": "ユーザー名",
+  "email": "メールアドレス",
+  "password": "パスワード",
+  "country": "国",
+  "signupButton": "登録",
+  "loginLink": "アカウントをお持ちの方はこちら",
+  "usernameTaken": "このユーザー名は既に使用されています",
+  "emailTaken": "このメールアドレスは既に使用されています",
+  "passwordRequirements": "パスワードは8文字以上で、大文字、小文字、数字、特殊文字を含める必要があります",
+  "signupFailed": "登録に失敗しました",
+  "countryPlaceholder": "国を選択してください",
+  "usernameTooShort": "ユーザー名は2文字以上である必要があります",
+  "invalidEmail": "有効なメールアドレスを入力してください",
+  "checkFailed": "確認に失敗しました。もう一度お試しください"
+}

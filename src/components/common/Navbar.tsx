@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { AppBar, Toolbar, Typography, Button, Box, Menu, MenuItem } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import AnimatedButton from "../Button/AnimatedButton";
 import { colors } from "../../styles/colors";
@@ -12,6 +13,7 @@ import { useLanguageStore } from "../../store/languageStore";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -37,8 +39,13 @@ export default function Navbar() {
   }, []);
 
   const onClickStart = () => {
-    // navigate("/terms");
-    alert("앱 배포가 진행중 입니다. 조금만 기다려주세요.");
+    navigate("/login");
+    // alert("앱 배포가 진행중 입니다. 조금만 기다려주세요.");
+  };
+
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
+    handleClose();
   };
 
   return (
@@ -127,24 +134,21 @@ export default function Navbar() {
           >
             <MenuItem
               onClick={() => {
-                setLanguage("ko");
-                handleClose();
+                handleLanguageChange("ko");
               }}
             >
               한국어
             </MenuItem>
             <MenuItem
               onClick={() => {
-                setLanguage("en");
-                handleClose();
+                handleLanguageChange("en");
               }}
             >
               English
             </MenuItem>
             <MenuItem
               onClick={() => {
-                setLanguage("jp");
-                handleClose();
+                handleLanguageChange("jp");
               }}
             >
               日本語
@@ -158,7 +162,7 @@ export default function Navbar() {
             marginRight: { xs: 1, sm: 4, md: "40vh" },
           }}
         >
-          <AnimatedButton text="시작하기" onClick={onClickStart} color={colors.primary} shadowColor={colors.tertiary} width="100px" height="40px" />
+          <AnimatedButton text="START" onClick={onClickStart} color={colors.primary} shadowColor={colors.tertiary} width="100px" height="40px" />
         </Box>
       </Toolbar>
     </AppBar>
