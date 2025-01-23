@@ -1,5 +1,5 @@
 import { Container, Grid, Typography } from "@mui/material";
-import { usePosts } from "../hooks/usePosts";
+import { usePosts } from "../hooks/quries/usePosts";
 
 function Community() {
   const { data: posts, isLoading, error } = usePosts();

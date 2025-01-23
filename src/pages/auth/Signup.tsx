@@ -16,14 +16,18 @@ import {
   FormControlLabel,
   Checkbox,
   IconButton,
+  Modal,
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import CircularProgress from "@mui/material/CircularProgress";
+
 import { signup } from "../../api/auth";
 import { useTranslation } from "react-i18next";
-import { useCountry } from "../../hooks/useCountry";
+import { useCountry } from "../../hooks/quries/useCountry";
 import { useValidation } from "../../hooks/useValidation";
 import { Country } from "../../types/country";
 import { TERMS_LINKS } from "./terms_links";
+import { useAuth } from "../../hooks/quries/useAuth";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -36,6 +40,19 @@ const MenuProps = {
   },
 };
 
+const modalStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  borderRadius: 2,
+  boxShadow: 24,
+  p: 4,
+  textAlign: "center",
+} as const;
+
 export default function Signup() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -47,9 +64,11 @@ export default function Signup() {
   const [termAgreement, setTermAgreement] = useState(false);
   const [privacyAgreement, setPrivacyAgreement] = useState(false);
   const [marketingAgreement, setMarketingAgreement] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const { country, isLoading, error } = useCountry();
   const { usernameError, emailError, passwordError, passwordConfirmError, validateUsername, validateEmail, validatePassword, validatePasswordConfirm } = useValidation();
+  const { signupMutation } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,7 +88,7 @@ export default function Signup() {
     }
 
     try {
-      const response = await signup({
+      const response = await signupMutation.mutateAsync({
         name: username,
         email,
         password,
@@ -78,10 +97,10 @@ export default function Signup() {
         privacy_agreement: privacyAgreement,
         marketing_agreement: marketingAgreement,
       });
-      console.log(response);
 
-      // setUser(response.user);
-      navigate("/login");
+      if (response.message) {
+        setShowSuccess(true);
+      }
     } catch (error) {
       console.error("Signup failed:", error);
     }
@@ -132,6 +151,19 @@ export default function Signup() {
       }}
     >
       <Container maxWidth="xs">
+        <Modal open={showSuccess} onClose={() => {}} aria-labelledby="signup-success-modal" aria-describedby="signup-success-description">
+          <Box sx={modalStyle}>
+            <Typography id="signup-success-modal" variant="h6" component="h2" sx={{ mb: 2 }}>
+              {t("title")}
+            </Typography>
+            <Typography id="signup-success-description" sx={{ mb: 3 }}>
+              {t("signupSuccess")}
+            </Typography>
+            <Button variant="contained" onClick={() => navigate("/login")} fullWidth>
+              확인
+            </Button>
+          </Box>
+        </Modal>
         <Box sx={{ mt: 8, display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Typography component="h1" variant="h5">
             {t("title")}
@@ -247,27 +279,37 @@ export default function Signup() {
                 }
               />
             </FormControl>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              disabled={
-                !username ||
-                !email ||
-                !password ||
-                !passwordConfirm ||
-                !selectedCountry ||
-                !termAgreement ||
-                !privacyAgreement ||
-                !!usernameError ||
-                !!emailError ||
-                !!passwordError ||
-                !!passwordConfirmError
-              }
-            >
-              {t("signupButton")}
-            </Button>
+            <Box sx={{ position: "relative" }}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+                disabled={
+                  !username ||
+                  !email ||
+                  !password ||
+                  !passwordConfirm ||
+                  !selectedCountry ||
+                  !termAgreement ||
+                  !privacyAgreement ||
+                  !!usernameError ||
+                  !!emailError ||
+                  !!passwordError ||
+                  !!passwordConfirmError ||
+                  signupMutation.isPending
+                }
+              >
+                {signupMutation.isPending ? (
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <CircularProgress size={20} color="inherit" />
+                    <span>{t("signingUp")}</span>
+                  </Box>
+                ) : (
+                  t("signupButton")
+                )}
+              </Button>
+            </Box>
             <Link href="/login" variant="body2">
               {t("loginLink")}
             </Link>

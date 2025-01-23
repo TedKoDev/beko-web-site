@@ -25,5 +25,7 @@
   "passwordLowercase": "Must include lowercase",
   "passwordNumber": "Must include numbers",
   "passwordSpecialChar": "Must include special characters",
-  "passwordConfirmError": "Passwords do not match"
+  "passwordConfirmError": "Passwords do not match",
+  "signupSuccess": "Sign up completed. We have sent an authentication email to the email you entered. Please log in after verifying.",
+  "signingUp": "Signing up..."
 }

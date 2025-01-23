@@ -22,12 +22,11 @@ export const validatePassword = (password: string) => {
 export const validateUsername = (username: string) => {
   if (!username) return false;
 
-  // 2-20자, 영문, 숫자, 한글 허용
+  // 2-20자 제한
   const minLength = 2;
   const maxLength = 20;
-  const validChars = /^[a-zA-Z0-9가-힣]+$/;
 
-  return username.length >= minLength && username.length <= maxLength && validChars.test(username);
+  return username.length >= minLength && username.length <= maxLength;
 };
 
 export interface ValidationError {
@@ -79,9 +78,6 @@ export const getUsernameValidationError = (username: string): ValidationError =>
   }
   if (username.length > 20) {
     return { hasError: true, message: t("usernameMaxLength") };
-  }
-  if (!/^[a-zA-Z0-9가-힣]+$/.test(username)) {
-    return { hasError: true, message: t("usernameValidChars") };
   }
   return { hasError: false, message: "" };
 };

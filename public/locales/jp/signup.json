@@ -28,5 +28,7 @@
   "passwordNumber": "数字を含める必要があります",
   "passwordSpecialChar": "特殊文字を含める必要があります",
   "passwordConfirmError": "パスワードが一致しません",
-  "passwordConfirmRequired": "パスワードを確認してください"
+  "passwordConfirmRequired": "パスワードを確認してください",
+  "signupSuccess": "登録が完了しました。入力したメールアドレスに認証メールを送信しました。認証後、ログインしてください。",
+  "signingUp": "登録中..."
 }

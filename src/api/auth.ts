@@ -6,7 +6,7 @@ interface LoginData {
   password: string;
 }
 
-interface SignupData extends LoginData {
+export interface SignupData extends LoginData {
   email: string;
   name: string;
   password: string;
@@ -21,9 +21,17 @@ interface CheckResponse {
   message?: string;
 }
 
+interface SignupResponse {
+  message: string;
+  username: string;
+}
+
 export const login = (data: LoginData) => client.post("/auth/login", data).then((response) => response.data);
 
-export const signup = (data: SignupData) => client.post("/auth/register", data).then((response) => response.data);
+export const signup = async (data: SignupData): Promise<SignupResponse> => {
+  const response = await client.post("/auth/register", data);
+  return response.data as SignupResponse;
+};
 
 export const checkEmail = async (email: string): Promise<CheckResponse> => {
   try {

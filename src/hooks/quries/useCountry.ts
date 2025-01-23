@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCountry } from "../api/utils";
-import { CountryResponse } from "../types/country";
+import { getCountry } from "../../api/utils";
+import { CountryResponse } from "../../types/country";
 
 export const useCountry = () => {
   const {
