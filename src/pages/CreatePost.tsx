@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, TextField, Button, Box } from "@mui/material";
-import { useCreatePost } from "../hooks/usePosts";
+import { useCreatePost } from "../hooks/quries/usePosts";
 
 export default function CreatePost() {
   const navigate = useNavigate();

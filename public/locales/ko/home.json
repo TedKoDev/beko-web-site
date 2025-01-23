@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "title": "BeraKorean",
+    "subtitle": "함께 성장하는 커뮤니티",
+    "cta": "시작하기"
+  },
+  "features": {
+    "title": "주요 기능",
+    "community": {
+      "title": "한국어 커뮤니티",
+      "description": "다양한 한국 및 한국어 관련 정보를 나누고 얻을 수 있습니다. 커뮤니티 멤버들과 함께 정보를 공유하고 소통하세요."
+    },
+    "consulting": {
+      "title": "Bera 선생님 컨설팅",
+      "description": "베라 선생님에게 1:1로 공부 관련 문의를 할 수 있습니다. 개인 맞춤형 학습 상담을 받아보세요."
+    },
+    "games": {
+      "title": "한국어 공부 게임",
+      "description": "그림보고 단어 맞추기 등 한국어를 공부할 수 있는 다양한 게임을 통해 재미있게 학습하세요."
+    },
+    "info": {
+      "title": "한국 관련 정보",
+      "description": "지속적인 한국 유학 및 일자리 정보 등 다양한 에이전시 정보들이 업데이트됩니다. 최신 정보를 확인하세요."
+    }
+  },
+  "howToUse": {
+    "title": "이용 방법",
+    "appDownload": {
+      "title": "앱 다운로드",
+      "description": "구글 플레이 스토어와 애플 앱스토어에서 BeraKorean 앱을 다운로드할 수 있습니다.",
+      "note": "* 웹사이트 버전은 현재 준비중입니다.",
+      "appStore": "App Store에서 다운로드",
+      "playStore": "Google Play에서 다운로드"
+    },
+    "startNow": {
+      "title": "지금 시작하세요",
+      "subtitle": "BeraKorean과 함께 성장하는 여정을 시작해보세요",
+      "cta": "무료로 시작하기"
+    }
+  },
+  "teacher": {
+    "title": "강사 소개",
+    "greeting": "안녕하세요, BeraKorean입니다!",
+    "name": "베라 선생님",
+    "intro": {
+      "content": "한국어를 재미있고 효과적으로 가르치는 것을 좋아합니다.",
+      "closing": "함께 즐겁게 한국어를 배워보아요!"
+    },
+    "recommended": {
+      "title": "이런 분들께 추천드려요",
+      "items": ["한국어를 처음 배우시는 분", "체계적으로 한국어를 배우고 싶으신 분", "한국 문화에 관심이 있으신 분"]
+    },
+    "background": {
+      "title": "학력 및 경력",
+      "items": ["한국어교육 전공", "한국어교원 자격증 보유", "5년 이상의 한국어 교육 경력"]
+    }
+  },
+  "youtube": {
+    "title": "유튜브 채널",
+    "description": "BeraKorean 유튜브 채널에서 다양한 한국어 관련 컨텐츠들을 시청할 수 있습니다."
+  },
+  "cafetalk": {
+    "title": "카페톡 수업 신청",
+    "description": "카페톡에서 1:1 한국어 수업을 신청하실 수 있습니다."
+  },
+  "links": {
+    "cafetalk": "카페톡에서 수업 신청하기",
+    "youtube": "유튜브 채널 구경하기",
+    "cta": "1:1 상담 신청하기"
+  }
+}

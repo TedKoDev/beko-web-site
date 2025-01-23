@@ -1,0 +1,8 @@
+{
+  "title": "Login",
+  "email": "Email",
+  "password": "Password",
+  "loginButton": "Login",
+  "signupLink": "Don't have an account? Sign up",
+  "loginFailed": "Login failed"
+}

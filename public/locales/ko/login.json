@@ -1,0 +1,8 @@
+{
+  "title": "로그인",
+  "email": "이메일",
+  "password": "비밀번호",
+  "loginButton": "로그인",
+  "signupLink": "계정이 없으신가요? 회원가입",
+  "loginFailed": "로그인에 실패했습니다"
+}

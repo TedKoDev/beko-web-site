@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "title": "BeraKorean",
+    "subtitle": "Growing Together Community",
+    "cta": "Get Started"
+  },
+  "features": {
+    "title": "Main Features",
+    "community": {
+      "title": "Korean Community",
+      "description": "Share and get various information about Korea and Korean language. Connect and communicate with community members."
+    },
+    "consulting": {
+      "title": "Consulting with Teacher Bera",
+      "description": "Get 1:1 study consultation with Teacher Bera. Receive personalized learning guidance."
+    },
+    "games": {
+      "title": "Korean Study Games",
+      "description": "Learn Korean through various games like picture word matching. Make learning fun and engaging."
+    },
+    "info": {
+      "title": "Korea Information",
+      "description": "Get updated information about studying and working in Korea from various agencies. Stay informed with the latest updates."
+    }
+  },
+  "howToUse": {
+    "title": "How to Use",
+    "appDownload": {
+      "title": "App Download",
+      "description": "Download the BeraKorean app from Google Play Store and Apple App Store.",
+      "note": "* Website version is coming soon.",
+      "appStore": "Download on App Store",
+      "playStore": "Get it on Google Play"
+    },
+    "startNow": {
+      "title": "Start Now",
+      "subtitle": "Begin your journey of growth with BeraKorean",
+      "cta": "Start Free"
+    }
+  },
+  "teacher": {
+    "title": "About the Teacher",
+    "greeting": "Hello, I'm BeraKorean!",
+    "name": "Teacher Bera",
+    "intro": {
+      "content": "I love teaching Korean in a fun and effective way.",
+      "closing": "Let's learn Korean together!"
+    },
+    "recommended": {
+      "title": "Recommended For",
+      "items": ["Beginners in Korean", "Those who want to learn Korean systematically", "Those interested in Korean culture"]
+    },
+    "background": {
+      "title": "Education & Experience",
+      "items": ["Major in Korean Language Education", "Certified Korean Language Teacher", "Over 5 years of teaching experience"]
+    }
+  },
+  "youtube": {
+    "title": "YouTube Channel",
+    "description": "Watch various Korean language content on the BeraKorean YouTube channel."
+  },
+  "cafetalk": {
+    "title": "Book Cafetalk Lessons",
+    "description": "You can book 1:1 Korean lessons on Cafetalk."
+  },
+  "links": {
+    "cafetalk": "Book Lessons on Cafetalk",
+    "youtube": "Visit YouTube Channel",
+    "cta": "Ask 1:1 Consultation"
+  }
+}

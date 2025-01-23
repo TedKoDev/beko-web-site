@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "title": "BeraKorean",
+    "subtitle": "共に成長するコミュニティ",
+    "cta": "始める"
+  },
+  "features": {
+    "title": "主な機能",
+    "community": {
+      "title": "韓国語コミュニティ",
+      "description": "韓国や韓国語に関する様々な情報を共有できます。コミュニティメンバーと情報を交換し、交流しましょう。"
+    },
+    "consulting": {
+      "title": "Bera先生の相談",
+      "description": "Bera先生に1:1で学習相談ができます。個別カスタマイズされた学習アドバイスを受けられます。"
+    },
+    "games": {
+      "title": "韓国語学習ゲーム",
+      "description": "絵を見て単語を当てるなど、様々なゲームを通じて楽しく韓国語を学習できます。"
+    },
+    "info": {
+      "title": "韓国関連情報",
+      "description": "韓国留学や就職情報など、様々なエージェンシー情報が更新されます。最新情報をチェックしましょう。"
+    }
+  },
+  "howToUse": {
+    "title": "利用方法",
+    "appDownload": {
+      "title": "アプリダウンロード",
+      "description": "Google Play StoreとApple App StoreでBeraKoreanアプリをダウンロードできます。",
+      "note": "* ウェブサイト版は現在準備中です。",
+      "appStore": "App Storeでダウンロード",
+      "playStore": "Google Playで入手"
+    },
+    "startNow": {
+      "title": "今すぐ始めましょう",
+      "subtitle": "BeraKoreanと共に成長の旅を始めましょう",
+      "cta": "無料で始める"
+    }
+  },
+  "teacher": {
+    "title": "講師紹介",
+    "greeting": "こんにちは、BeraKoreanです！",
+    "name": "ベラ先生",
+    "intro": {
+      "content": "楽しく効果的に韓国語を教えることが大好きです。",
+      "closing": "一緒に楽しく韓国語を学びましょう！"
+    },
+    "recommended": {
+      "title": "こんな方におすすめ",
+      "items": ["韓国語を初めて学ぶ方", "体系的に韓国語を学びたい方", "韓国文化に興味がある方"]
+    },
+    "background": {
+      "title": "学歴・経歴",
+      "items": ["韓国語教育専攻", "韓国語教員資格保有", "5年以上の韓国語教育経験"]
+    }
+  },
+  "youtube": {
+    "title": "YouTubeチャンネル",
+    "description": "BeraKorean YouTubeチャンネルで様々な韓国語コンテンツをご覧いただけます。"
+  },
+  "cafetalk": {
+    "title": "Cafetalkレッスン予約",
+    "description": "Cafetalkで1:1韓国語レッスンを予約することができます。"
+  },
+  "links": {
+    "cafetalk": "Cafetalkでレッスンを予約",
+    "youtube": "YouTubeチャンネルを見る",
+    "cta": "1:1 相談を申し込む"
+  }
+}
