@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { checkEmail, checkUsername } from "../api/auth";
-import { getPasswordValidationError, getUsernameValidationError, getEmailValidationError } from "../utils/validation";
+import { getPasswordValidationError, getUsernameValidationError, getEmailValidationError, getPasswordConfirmValidationError } from "../utils/validation";
 
 export const useValidation = () => {
   const { t } = useTranslation("signup");
   const [usernameError, setUsernameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [passwordConfirmError, setPasswordConfirmError] = useState("");
 
   const validateUsername = async (username: string, customError?: string) => {
     if (customError) {
@@ -32,7 +33,7 @@ export const useValidation = () => {
       setUsernameError("");
       return true;
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       setUsernameError(t("checkFailed"));
       return false;
     }
@@ -61,7 +62,7 @@ export const useValidation = () => {
       setEmailError("");
       return true;
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       setEmailError(t("checkFailed"));
       return false;
     }
@@ -77,12 +78,24 @@ export const useValidation = () => {
     return true;
   };
 
+  const validatePasswordConfirm = (passwordConfirm: string, password: string) => {
+    const validationError = getPasswordConfirmValidationError(passwordConfirm, password);
+    if (validationError.hasError) {
+      setPasswordConfirmError(validationError.message);
+      return false;
+    }
+    setPasswordConfirmError("");
+    return true;
+  };
+
   return {
     usernameError,
     emailError,
     passwordError,
+    passwordConfirmError,
     validateUsername,
     validateEmail,
     validatePassword,
+    validatePasswordConfirm,
   };
 };

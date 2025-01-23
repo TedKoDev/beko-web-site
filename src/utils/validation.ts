@@ -1,3 +1,5 @@
+import i18next from "i18next";
+
 export const validateEmail = (email: string) => {
   if (!email) return false;
   // RFC 5322 표준에 맞는 이메일 정규식
@@ -34,49 +36,63 @@ export interface ValidationError {
 }
 
 export const getPasswordValidationError = (password: string): ValidationError => {
+  const t = (key: string) => i18next.t(key, { ns: "signup" });
   if (!password) {
-    return { hasError: true, message: "비밀번호를 입력해주세요" };
+    return { hasError: true, message: t("passwordRequired") };
   }
   if (password.length < 8) {
-    return { hasError: true, message: "비밀번호는 8자 이상이어야 합니다" };
+    return { hasError: true, message: t("passwordMinLength") };
   }
   if (!/[A-Z]/.test(password)) {
-    return { hasError: true, message: "대문자를 포함해야 합니다" };
+    return { hasError: true, message: t("passwordUppercase") };
   }
   if (!/[a-z]/.test(password)) {
-    return { hasError: true, message: "소문자를 포함해야 합니다" };
+    return { hasError: true, message: t("passwordLowercase") };
   }
   if (!/\d/.test(password)) {
-    return { hasError: true, message: "숫자를 포함해야 합니다" };
+    return { hasError: true, message: t("passwordNumber") };
   }
   if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-    return { hasError: true, message: "특수문자를 포함해야 합니다" };
+    return { hasError: true, message: t("passwordSpecialChar") };
+  }
+  return { hasError: false, message: "" };
+};
+
+export const getPasswordConfirmValidationError = (passwordConfirm: string, password: string): ValidationError => {
+  const t = (key: string) => i18next.t(key, { ns: "signup" });
+  if (!passwordConfirm) {
+    return { hasError: true, message: t("passwordConfirmRequired") };
+  }
+  if (passwordConfirm !== password) {
+    return { hasError: true, message: t("passwordConfirmError") };
   }
   return { hasError: false, message: "" };
 };
 
 export const getUsernameValidationError = (username: string): ValidationError => {
+  const t = (key: string) => i18next.t(key, { ns: "signup" });
   if (!username) {
-    return { hasError: true, message: "사용자 이름을 입력해주세요" };
+    return { hasError: true, message: t("usernameRequired") };
   }
-  if (username.length < 2) {
-    return { hasError: true, message: "사용자 이름은 2자 이상이어야 합니다" };
+  if (username.length < 3) {
+    return { hasError: true, message: t("usernameTooShort") };
   }
   if (username.length > 20) {
-    return { hasError: true, message: "사용자 이름은 20자 이하여야 합니다" };
+    return { hasError: true, message: t("usernameMaxLength") };
   }
   if (!/^[a-zA-Z0-9가-힣]+$/.test(username)) {
-    return { hasError: true, message: "영문, 숫자, 한글만 사용할 수 있습니다" };
+    return { hasError: true, message: t("usernameValidChars") };
   }
   return { hasError: false, message: "" };
 };
 
 export const getEmailValidationError = (email: string): ValidationError => {
+  const t = (key: string) => i18next.t(key, { ns: "signup" });
   if (!email) {
-    return { hasError: true, message: "이메일을 입력해주세요" };
+    return { hasError: true, message: t("emailRequired") };
   }
   if (!validateEmail(email)) {
-    return { hasError: true, message: "올바른 이메일 형식이 아닙니다" };
+    return { hasError: true, message: t("emailInvalid") };
   }
   return { hasError: false, message: "" };
 };

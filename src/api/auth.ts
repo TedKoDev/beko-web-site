@@ -7,8 +7,13 @@ interface LoginData {
 }
 
 interface SignupData extends LoginData {
-  username: string;
-  country: string;
+  email: string;
+  name: string;
+  password: string;
+  country_id: number;
+  term_agreement: boolean;
+  privacy_agreement: boolean;
+  marketing_agreement: boolean;
 }
 
 interface CheckResponse {
