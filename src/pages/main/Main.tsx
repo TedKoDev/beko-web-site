@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 import ComingSoonDialog from "../../components/common/ComingSoonDialog";
 
-import { bannercomm1, bannercomm2 } from "../../assets";
 import AnimatedButton from "../../components/Button/AnimatedButton";
 import { colors } from "../../styles/colors";
 

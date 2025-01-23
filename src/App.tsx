@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, , Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Navbar from "./components/common/Navbar";
@@ -19,7 +19,7 @@ import { useEffect } from "react";
 import "./i18n";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "./store/authStore";
-import Main from "./pages/main/main";
+import Main from "./pages/main/Main";
 
 const queryClient = new QueryClient();
 
