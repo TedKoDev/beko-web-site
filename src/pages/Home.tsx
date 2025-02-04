@@ -42,6 +42,14 @@ export default function Home() {
     }
   };
 
+  const clickAppStoreHandler = () => {
+    window.open("https://apps.apple.com/mx/app/berakorean/id6739745872?l=en-GB", "_blank");
+  };
+
+  const clickPlayStoreHandler = () => {
+    window.open("https://play.google.com/store/apps/details?id=com.ordihong.beko&pcampaignid=web_share", "_blank");
+  };
+
   return (
     <Box>
       {/* 눈 내리는 효과 */}
@@ -314,7 +322,7 @@ export default function Home() {
                   >
                     <AnimatedButtonWithIcon
                       text={t("howToUse.appDownload.appStore")}
-                      onClick={clickHandler}
+                      onClick={clickAppStoreHandler}
                       color="black"
                       shadowColor="rgba(0, 0, 0, 0.3)"
                       width={{ xs: "100%", sm: "250px" }}
@@ -331,7 +339,7 @@ export default function Home() {
                   >
                     <AnimatedButtonWithIcon
                       text={t("howToUse.appDownload.playStore")}
-                      onClick={clickHandler}
+                      onClick={clickPlayStoreHandler}
                       color="#1a73e8"
                       shadowColor="rgba(26, 115, 232, 0.3)"
                       width={{ xs: "100%", sm: "250px" }}
