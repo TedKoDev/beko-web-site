@@ -34,11 +34,9 @@ export default function Home() {
   const { isAuthenticated } = useAuthStore();
 
   const clickHandler = () => {
-    // setDialogOpen(!dialogOpen);
-    if (isAuthenticated) {
-      navigate("/main");
-    } else {
-      navigate("/login");
+    const downloadSection = document.getElementById("download-section");
+    if (downloadSection) {
+      downloadSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -284,35 +282,123 @@ export default function Home() {
         </Box>
         {/* How to Use Section */}
         <Box sx={{ py: { xs: 8, md: 15 }, backgroundColor: "grey.100" }}>
-          <Container maxWidth="lg">
-            <Typography variant="h3" marginBottom="40px" textAlign="center" gutterBottom sx={{ fontSize: { xs: "2rem", md: "3rem" } }}>
-              {t("howToUse.title")}
-            </Typography>
+          <section id="download-section">
+            <Container maxWidth="lg">
+              <Typography variant="h3" marginBottom="40px" textAlign="center" gutterBottom sx={{ fontSize: { xs: "2rem", md: "3rem" } }}>
+                {t("howToUse.title")}
+              </Typography>
 
-            {/* 앱 다운로드 */}
-            <Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="center" sx={{ mb: { xs: 4, md: 8 } }}>
-              <Box
-                sx={{
-                  width: { xs: "100%", md: "50%" },
-                  textAlign: "left",
-                  mb: { xs: 3, md: 0 },
-                }}
-              >
-                <Typography variant="h5" gutterBottom sx={{ color: "purple" }}>
-                  {t("howToUse.appDownload.title")}
-                </Typography>
-                <Typography sx={{ mb: 2 }}>{t("howToUse.appDownload.description")}</Typography>
-                <Typography color="text.secondary" sx={{ mb: 2 }}>
-                  {t("howToUse.appDownload.note")}
-                </Typography>
+              {/* 앱 다운로드 */}
+              <Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="center" sx={{ mb: { xs: 4, md: 8 } }}>
                 <Box
                   sx={{
-                    display: "flex",
-                    gap: 2,
-                    flexDirection: { xs: "column", sm: "row" },
-                    alignItems: { xs: "stretch", sm: "center" },
+                    width: { xs: "100%", md: "50%" },
+                    textAlign: "left",
+                    mb: { xs: 3, md: 0 },
                   }}
                 >
+                  <Typography variant="h5" gutterBottom sx={{ color: "purple" }}>
+                    {t("howToUse.appDownload.title")}
+                  </Typography>
+                  <Typography sx={{ mb: 2 }}>{t("howToUse.appDownload.description")}</Typography>
+                  <Typography color="text.secondary" sx={{ mb: 2 }}>
+                    {t("howToUse.appDownload.note")}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      gap: 2,
+                      flexDirection: { xs: "column", sm: "row" },
+                      alignItems: { xs: "stretch", sm: "center" },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: "relative",
+                        zIndex: 1,
+                        width: { xs: "100%", sm: "300px" },
+                      }}
+                    >
+                      <AnimatedButtonWithIcon
+                        text={t("howToUse.appDownload.appStore")}
+                        onClick={clickAppStoreHandler}
+                        color="black"
+                        shadowColor="rgba(0, 0, 0, 0.3)"
+                        width={{ xs: "100%", sm: "250px" }}
+                        height="60px"
+                        startIcon={<Box component="img" src={apple} sx={{ width: 24 }} />}
+                      />
+                    </Box>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        zIndex: 1,
+                        width: { xs: "100%", sm: "300px" },
+                      }}
+                    >
+                      <AnimatedButtonWithIcon
+                        text={t("howToUse.appDownload.playStore")}
+                        onClick={clickPlayStoreHandler}
+                        color="#1a73e8"
+                        shadowColor="rgba(26, 115, 232, 0.3)"
+                        width={{ xs: "100%", sm: "250px" }}
+                        height="60px"
+                        startIcon={<Box component="img" src={google} sx={{ width: 24 }} />}
+                      />
+                    </Box>
+                  </Box>
+                </Box>
+                <Box display={{ xs: "none", md: "flex" }} width="50%">
+                  <Box
+                    component="img"
+                    src={bannercomm3}
+                    alt="앱 미리보기"
+                    sx={{
+                      width: { xs: "10%", md: "40%" },
+                      height: "auto",
+                      ml: { xs: 0, md: 3 },
+                      mt: { xs: 3, md: 0 },
+                    }}
+                  />
+                  <Box
+                    component="img"
+                    src={bannercomm1}
+                    alt="앱 미리보기"
+                    sx={{
+                      width: { xs: "10%", md: "40%" },
+                      height: "auto",
+                      ml: { xs: 0, md: 3 },
+                      mt: { xs: 3, md: 0 },
+                    }}
+                  />
+                </Box>
+              </Box>
+
+              {/* 유튜브 채널 */}
+              <Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="center" sx={{ mb: { xs: 4, md: 8 } }}>
+                <Box
+                  component="img"
+                  src={berayoutube}
+                  alt="유튜브 채널"
+                  sx={{
+                    width: { xs: "100%", md: "50%" },
+                    height: "auto",
+                    mr: { xs: 0, md: 3 },
+                    mb: { xs: 3, md: 0 },
+                    order: { xs: 2, md: 1 },
+                  }}
+                />
+                <Box
+                  sx={{
+                    width: { xs: "100%", md: "50%" },
+                    textAlign: "left",
+                    order: { xs: 1, md: 2 },
+                  }}
+                >
+                  <Typography variant="h5" gutterBottom sx={{ color: "purple" }}>
+                    {t("youtube.title")}
+                  </Typography>
+                  <Typography sx={{ mb: 3 }}>{t("youtube.description")}</Typography>
                   <Box
                     sx={{
                       position: "relative",
@@ -321,15 +407,32 @@ export default function Home() {
                     }}
                   >
                     <AnimatedButtonWithIcon
-                      text={t("howToUse.appDownload.appStore")}
-                      onClick={clickAppStoreHandler}
-                      color="black"
-                      shadowColor="rgba(0, 0, 0, 0.3)"
-                      width={{ xs: "100%", sm: "250px" }}
+                      text={t("links.youtube")}
+                      onClick={() => window.open("https://www.youtube.com/@berakorean", "_blank")}
+                      color="#FF0000"
+                      shadowColor="rgba(255, 0, 0, 0.3)"
+                      width={{ xs: "100%", sm: "300px" }}
                       height="60px"
-                      startIcon={<Box component="img" src={apple} sx={{ width: 24 }} />}
+                      startIcon={<Box component="img" src={youtube} sx={{ width: 24 }} />}
                     />
                   </Box>
+                </Box>
+              </Box>
+
+              {/* 카페톡 수업 */}
+              <Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="center">
+                <Box
+                  sx={{
+                    width: { xs: "100%", md: "50%" },
+                    textAlign: "left",
+                    mb: { xs: 3, md: 0 },
+                  }}
+                >
+                  <Typography variant="h5" gutterBottom sx={{ color: "purple" }}>
+                    {t("cafetalk.title")}
+                  </Typography>
+                  <Typography sx={{ mb: 3 }}>{t("cafetalk.description")}</Typography>
+
                   <Box
                     sx={{
                       position: "relative",
@@ -338,132 +441,29 @@ export default function Home() {
                     }}
                   >
                     <AnimatedButtonWithIcon
-                      text={t("howToUse.appDownload.playStore")}
-                      onClick={clickPlayStoreHandler}
-                      color="#1a73e8"
-                      shadowColor="rgba(26, 115, 232, 0.3)"
-                      width={{ xs: "100%", sm: "250px" }}
+                      text={t("links.cafetalk")}
+                      onClick={clickHandler}
+                      color={colors.primary}
+                      shadowColor={colors.tertiary}
+                      width={{ xs: "100%", sm: "300px" }}
                       height="60px"
-                      startIcon={<Box component="img" src={google} sx={{ width: 24 }} />}
+                      startIcon={<Box component="img" src={cafetalk} sx={{ width: 50 }} />}
                     />
                   </Box>
                 </Box>
-              </Box>
-              <Box display={{ xs: "none", md: "flex" }} width="50%">
                 <Box
                   component="img"
-                  src={bannercomm3}
-                  alt="앱 미리보기"
+                  src={cafetalkpreview}
+                  alt="카페톡 수업"
                   sx={{
-                    width: { xs: "10%", md: "40%" },
+                    width: { xs: "100%", md: "50%" },
                     height: "auto",
                     ml: { xs: 0, md: 3 },
-                    mt: { xs: 3, md: 0 },
-                  }}
-                />
-                <Box
-                  component="img"
-                  src={bannercomm1}
-                  alt="앱 미리보기"
-                  sx={{
-                    width: { xs: "10%", md: "40%" },
-                    height: "auto",
-                    ml: { xs: 0, md: 3 },
-                    mt: { xs: 3, md: 0 },
                   }}
                 />
               </Box>
-            </Box>
-
-            {/* 유튜브 채널 */}
-            <Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="center" sx={{ mb: { xs: 4, md: 8 } }}>
-              <Box
-                component="img"
-                src={berayoutube}
-                alt="유튜브 채널"
-                sx={{
-                  width: { xs: "100%", md: "50%" },
-                  height: "auto",
-                  mr: { xs: 0, md: 3 },
-                  mb: { xs: 3, md: 0 },
-                  order: { xs: 2, md: 1 },
-                }}
-              />
-              <Box
-                sx={{
-                  width: { xs: "100%", md: "50%" },
-                  textAlign: "left",
-                  order: { xs: 1, md: 2 },
-                }}
-              >
-                <Typography variant="h5" gutterBottom sx={{ color: "purple" }}>
-                  {t("youtube.title")}
-                </Typography>
-                <Typography sx={{ mb: 3 }}>{t("youtube.description")}</Typography>
-                <Box
-                  sx={{
-                    position: "relative",
-                    zIndex: 1,
-                    width: { xs: "100%", sm: "300px" },
-                  }}
-                >
-                  <AnimatedButtonWithIcon
-                    text={t("links.youtube")}
-                    onClick={() => window.open("https://www.youtube.com/@berakorean", "_blank")}
-                    color="#FF0000"
-                    shadowColor="rgba(255, 0, 0, 0.3)"
-                    width={{ xs: "100%", sm: "300px" }}
-                    height="60px"
-                    startIcon={<Box component="img" src={youtube} sx={{ width: 24 }} />}
-                  />
-                </Box>
-              </Box>
-            </Box>
-
-            {/* 카페톡 수업 */}
-            <Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="center">
-              <Box
-                sx={{
-                  width: { xs: "100%", md: "50%" },
-                  textAlign: "left",
-                  mb: { xs: 3, md: 0 },
-                }}
-              >
-                <Typography variant="h5" gutterBottom sx={{ color: "purple" }}>
-                  {t("cafetalk.title")}
-                </Typography>
-                <Typography sx={{ mb: 3 }}>{t("cafetalk.description")}</Typography>
-
-                <Box
-                  sx={{
-                    position: "relative",
-                    zIndex: 1,
-                    width: { xs: "100%", sm: "300px" },
-                  }}
-                >
-                  <AnimatedButtonWithIcon
-                    text={t("links.cafetalk")}
-                    onClick={clickHandler}
-                    color={colors.primary}
-                    shadowColor={colors.tertiary}
-                    width={{ xs: "100%", sm: "300px" }}
-                    height="60px"
-                    startIcon={<Box component="img" src={cafetalk} sx={{ width: 50 }} />}
-                  />
-                </Box>
-              </Box>
-              <Box
-                component="img"
-                src={cafetalkpreview}
-                alt="카페톡 수업"
-                sx={{
-                  width: { xs: "100%", md: "50%" },
-                  height: "auto",
-                  ml: { xs: 0, md: 3 },
-                }}
-              />
-            </Box>
-          </Container>
+            </Container>
+          </section>
         </Box>
 
         {/* Fifth Section - CTA */}
