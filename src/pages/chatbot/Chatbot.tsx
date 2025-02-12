@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import SendIcon from "@mui/icons-material/Send";
 import { colors } from "../../styles/colors";
 import { io, Socket } from "socket.io-client";
-import { useLocation } from "react-router-dom";
 
 interface ChatMessage {
   content: string;
@@ -18,13 +17,10 @@ interface ChatResponse {
 }
 
 export default function Chatbot() {
-  const location = useLocation();
-  const isApp = new URLSearchParams(location.search).get("platform") === "app";
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [socket, setSocket] = useState<Socket | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { t } = useTranslation();
 
   useEffect(() => {
     const initialMessage: ChatMessage = {
@@ -115,7 +111,7 @@ export default function Chatbot() {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        mt: isApp ? 0 : "96px",
+        mt: "96px",
         position: "relative",
       }}
     >
@@ -126,7 +122,7 @@ export default function Chatbot() {
           display: "flex",
           flexDirection: "column",
           p: { xs: 1, sm: 2, md: 4 },
-          height: isApp ? "100vh" : "calc(100vh - 96px)",
+          height: "calc(100vh - 96px)",
           position: "relative",
         }}
       >
@@ -188,12 +184,12 @@ export default function Chatbot() {
             mx: { xs: 0, sm: "auto" },
             width: "100%",
             maxWidth: (theme) => ({
-              xs: "100%",
+              xs: "90%",
               sm: theme.breakpoints.values.lg,
             }),
           }}
         >
-          <Box sx={{ display: "flex", gap: 1, maxWidth: "90%" }}>
+          <Box sx={{ display: "flex", gap: 1, width: "100%" }}>
             <TextField
               fullWidth
               multiline
@@ -201,7 +197,7 @@ export default function Chatbot() {
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder={t("chatbot.inputPlaceholder") || "메시지를 입력하세요..."}
+              placeholder="메시지를 입력하세요... / Enter your message... / メッセージを入力してください..."
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: 2,
