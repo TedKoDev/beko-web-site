@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import SendIcon from "@mui/icons-material/Send";
 import { colors } from "../../styles/colors";
 import { io, Socket } from "socket.io-client";
+import { useLocation } from "react-router-dom";
 
 interface ChatMessage {
   content: string;
@@ -17,6 +18,8 @@ interface ChatResponse {
 }
 
 export default function Chatbot() {
+  const location = useLocation();
+  const isApp = new URLSearchParams(location.search).get("platform") === "app";
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [socket, setSocket] = useState<Socket | null>(null);
@@ -111,7 +114,7 @@ export default function Chatbot() {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        mt: "96px",
+        mt: isApp ? 0 : "96px",
         position: "relative",
       }}
     >
@@ -122,7 +125,7 @@ export default function Chatbot() {
           display: "flex",
           flexDirection: "column",
           p: { xs: 1, sm: 2, md: 4 },
-          height: "calc(100vh - 96px)",
+          height: isApp ? "100vh" : "calc(100vh - 96px)",
           position: "relative",
         }}
       >
