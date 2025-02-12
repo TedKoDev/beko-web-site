@@ -2,7 +2,7 @@ import axios from "axios";
 import { handleApiError } from "./utils";
 
 // const API_BASE_URL = "http://localhost:3000/api/v1/";
-// const API_BASE_URL = 'http://localhost:3000/api/v1/';
+// const API_BASE_URL = "http://localhost:3000/api/v1/";
 const API_BASE_URL = "https://api.berakorean.com/api/v1/";
 
 export interface ApiResponse<T = unknown> {

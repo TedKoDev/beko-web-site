@@ -21,6 +21,7 @@ import { useTranslation } from "react-i18next";
 import { useAuthStore } from "./store/authStore";
 import Main from "./pages/main/Main";
 import Terms from "./pages/terms/Terms";
+import Chatbot from "./pages/chatbot/Chatbot";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={isAuthenticated ? <Navigate to="/main" replace /> : <Home />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/chatbot" element={<Chatbot />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/community" element={<Community />} />
           <Route path="/post/:id" element={<PostDetail />} />

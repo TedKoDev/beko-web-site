@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AppBar, Toolbar, Typography, Button, Box, Menu, MenuItem, IconButton, Drawer, List, ListItem, ListItemText, ListItemButton } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import AnimatedButton from "../Button/AnimatedButton";
@@ -14,6 +14,7 @@ import { useAuthStore } from "../../store/authStore";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { logout } = useAuthStore();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -23,6 +24,25 @@ export default function Navbar() {
   const { setLanguage } = useLanguageStore();
 
   const { isAuthenticated, user } = useAuthStore();
+
+  // chatbot 페이지이면서 app 파라미터가 있을 때만 Navbar 숨기기
+  const isChatbot = location.pathname === "/chatbot";
+  const isApp = new URLSearchParams(location.search).get("platform") === "app";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 챗봇 페이지이면서 앱에서 접근할 때는 Navbar를 렌더링하지 않음
+  if (isChatbot && isApp) {
+    return null;
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -43,16 +63,6 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
-      setIsScrolled(scrolled);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const onClickStart = () => {
     navigate("/login");
     // alert("앱 배포가 진행중 입니다. 조금만 기다려주세요.");
@@ -70,9 +80,9 @@ export default function Navbar() {
           <ListItemText primary="Main" />
         </ListItemButton>
       </ListItem>
-      <ListItem onClick={() => handleMenuItemClick("/download")}>
+      <ListItem onClick={() => handleMenuItemClick("/chatbot")}>
         <ListItemButton>
-          <ListItemText primary="Download" />
+          <ListItemText primary="Chatbot" />
         </ListItemButton>
       </ListItem>
       {isAuthenticated && (
@@ -150,9 +160,9 @@ export default function Navbar() {
             <Button color="inherit" onClick={() => navigate("/main")} sx={{ color: "black" }}>
               Main
             </Button>
-            {/* <Button color="inherit" onClick={() => navigate("/download")} sx={{ color: "black" }}>
-              Download
-            </Button> */}
+            <Button color="inherit" onClick={() => navigate("/chatbot")} sx={{ color: "black" }}>
+              Chatbot
+            </Button>
           </Box>
         </Box>
 
